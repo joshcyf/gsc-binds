@@ -1,3 +1,4 @@
+self thread addGlitch( "+skipKillcam", "skipKillcam", ::skipKillcam );
 skipKillcam(){
 
         level.showingFinalKillcam = false;
