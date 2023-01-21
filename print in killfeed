@@ -1,0 +1,6 @@
+
+self thread addBind( "killfeedmsg", "killfeedmsg", ::killfeedmsg );
+killfeedmsg(){
+		level.killfeedmsg = getdvar("killfeedmsg");
+		self iprintln(level.killfeedmsg+" Connected");
+}
