@@ -1,4 +1,4 @@
-self thread addGlitch( "+fragVision", "fragVision", ::fragVision );
+self thread addBind( "+fragVision", "fragVision", ::fragVision );
 setDvarIfUninitialized( "fragshellshock", 2 );
 
 fragVision(){
