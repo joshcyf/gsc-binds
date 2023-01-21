@@ -1,4 +1,4 @@
-self thread addGlitch( "+stunVision", "stunVision", ::stunVision );
+self thread addBind( "+stunVision", "stunVision", ::stunVision );
 setDvarIfUninitialized("stunshellshock", 2);
 
 stunVision(){
