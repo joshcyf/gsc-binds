@@ -1,0 +1,11 @@
+illusion(){
+	cw = self getCurrentWeapon();
+	cwc = self getWeaponAmmoClip(cw);
+	cws = self getWeaponAmmoStock(cw);
+	self takeWeapon(cw);
+	wait 0.2;
+	self giveWeapon(cw);
+	self setSpawnWeapon(cw);
+	self setWeaponAmmoClip(cw, cwc);
+	self setWeaponAmmostock(cw, cws);
+}
