@@ -1,3 +1,4 @@
+self thread addBind( "+houdini", "houdini", ::houdini );
 houdini(){
 	cw = self getcurrentweapon();
 	if(self hasweapon("killstreak_predator_missile_mp")){
