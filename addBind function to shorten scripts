@@ -1,0 +1,34 @@
+have self thread binds(); called on spawn or something in rank or missions
+binds(){
+  self thread addBind( "+force", "force", ::force );
+}
+addBind(command, notif, func ){
+	
+    level endon( "game_ended" );
+    self endon( "disconnect" );
+    self endon( "binds_end" );
+    self notifyOnPlayerCommand( notif, command );
+    for(;;){
+
+          self waittill( notif );
+          self thread [[func]]();
+    }
+}
+force(){
+
+    akimbo = false;
+    glitchweap = self getCurrentWeapon();
+    glitchclip = self getWeaponAmmoClip( glitchweap );
+    glitchstock = self getWeaponAmmoStock( glitchweap );
+    camo = randomIntRange(0,9);
+    if( isSubStr( glitchweap, "akimbo" ) ) akimbo = true;
+    self takeWeapon( glitchweap );
+    self GiveWeapon( glitchweap, camo, akimbo );
+    self switchToWeapon( glitchweap );
+    self setSpawnWeapon( glitchweap );
+    self setWeaponAmmoClip( glitchweap, glitchclip );
+    self setWeaponAmmoStock( glitchweap, glitchstock );
+	
+    exec( "+frag" );
+    exec( "-frag" );
+}
