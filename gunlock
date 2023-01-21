@@ -1,0 +1,17 @@
+gunlock(){	
+
+	exec("+melee");exec("-melee");//wait 0.001;
+	nacmod = self getCurrentWeapon();
+	if (nacmod == self.PrimaryWeapon){
+		Secondary = self.SecondaryWeapon;
+		wait .01;
+		self thread ChangeAppearance112();
+		self SetSpawnWeapon( secondary );
+	}
+	else if (nacmod == self.SecondaryWeapon){
+		Primary = self.PrimaryWeapon;
+		wait .01;
+		self thread ChangeAppearance112();
+		self SetSpawnWeapon( primary );
+	}
+}
