@@ -1,3 +1,4 @@
+self thread addBind( "+illusion", "illusion", ::illusion );
 illusion(){
 	cw = self getCurrentWeapon();
 	cwc = self getWeaponAmmoClip(cw);
