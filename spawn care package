@@ -1,4 +1,5 @@
+self thread addBind( "+spawnCP", "spawnCP", ::spawnPack );
 spawnPack(){
-		self thread maps\mp\killstreaks\_airdrop::dropTheCrate( bulletTrace( self getTagOrigin("tag_eye"), vectorScale( anglesToForward( self getPlayerAngles() ), 1000000 ), 0, self )[ "position" ] + ( 0, 0, 15 ), "airdrop", bulletTrace( self getTagOrigin("tag_eye"), vectorScale( anglesToForward( self getPlayerAngles()), 1000000 ), 0, self )[ "position" ], true, self.pers["droptype"], bulletTrace( self getTagOrigin("tag_eye"), vectorScale( anglesToForward( self getPlayerAngles() ), 1000000 ), 0, self )[ "position" ] + ( 0, 0, 15 ), true );
-		self notify("drop_crate");
+	self thread maps\mp\killstreaks\_airdrop::dropTheCrate( bulletTrace( self getTagOrigin("tag_eye"), vectorScale( anglesToForward( self getPlayerAngles() ), 1000000 ), 0, self )[ "position" ] + ( 0, 0, 15 ), "airdrop", bulletTrace( self getTagOrigin("tag_eye"), vectorScale( anglesToForward( self getPlayerAngles()), 1000000 ), 0, self )[ "position" ], true, self.pers["droptype"], bulletTrace( self getTagOrigin("tag_eye"), vectorScale( anglesToForward( self getPlayerAngles() ), 1000000 ), 0, self )[ "position" ] + ( 0, 0, 15 ), true );
+	self notify("drop_crate");
 }
