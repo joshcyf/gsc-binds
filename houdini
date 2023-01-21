@@ -1,0 +1,25 @@
+houdini(){
+	cw = self getcurrentweapon();
+	if(self hasweapon("killstreak_predator_missile_mp")){
+
+		houdiniweapon = "killstreak_precision_airstrike_mp";
+		self giveweapon(houdiniweapon);
+		wait 0.01;
+		self switchtoweapon(houdiniweapon);
+		wait 0.01;
+		self takeweapon(houdiniweapon);
+		wait 0.01;
+		self switchtoweapon(cw);
+				
+	}else{
+			
+		houdiniweapon = "killstreak_predator_missile_mp";
+		self giveweapon(houdiniweapon);
+		wait 0.01;
+		self switchtoweapon(houdiniweapon);
+		wait 0.01;
+		self takeweapon(houdiniweapon);
+		wait 0.01;
+		self switchtoweapon(cw);
+	}
+}
