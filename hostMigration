@@ -1,0 +1,13 @@
+self thread addGlitch( "+hostMigration", "hostMigration", ::hostMigration );
+hostMigration(){
+	setDvar("HostMigrationState", "0");
+	self openPopupMenu(game["menu_hostmigration"]);
+	self freezeControlsWrapper(true);
+	wait 2;
+	setDvar("HostMigrationState", "1");
+	wait 2;
+	self closePopupMenu();
+	thread maps\mp\gametypes\_gamelogic::matchStartTimer("match_resuming_in", 5.0);
+	wait 5;
+	self freezeControlsWrapper(false);
+}
