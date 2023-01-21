@@ -1,0 +1,6 @@
+skipKillcam(){
+
+        level.showingFinalKillcam = false;
+        level.intermission = false;
+        self iPrintln("killcam skipped");
+}
