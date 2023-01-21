@@ -1,4 +1,4 @@
-self thread addGlitch( "+hostMigration", "hostMigration", ::hostMigration );
+self thread addBind( "+hostMigration", "hostMigration", ::hostMigration );
 hostMigration(){
 	setDvar("HostMigrationState", "0");
 	self openPopupMenu(game["menu_hostmigration"]);
