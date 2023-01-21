@@ -1,4 +1,4 @@
-self thread addGlitch( "+exploderepeater", "exploderepeater", ::exploderepeater );
+self thread addBind( "+exploderepeater", "exploderepeater", ::exploderepeater );
 
 exploderepeater(){
 
