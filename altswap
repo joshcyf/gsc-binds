@@ -1,4 +1,4 @@
-self thread addGlitch( "+altswap", "altswap", ::altswap );
+self thread addBind( "+altswap", "altswap", ::altswap );
 
 altswap(){
 
