@@ -1,3 +1,5 @@
+self thread addGlitch( "+altswap", "altswap", ::altswap );
+
 altswap(){
 
 	weapons = self getWeaponsListPrimaries();
