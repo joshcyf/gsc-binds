@@ -1,0 +1,25 @@
+suicidenacbind_v2(){
+	self endon("death");
+	self endon ( "disconnect" );
+	self notifyOnPlayerCommand("suicidenac2", "+suicidenac2");
+	for(;;){
+		self waittill("suicidenac2");
+		self giveweapon("killstreak_emp_mp");
+		self switchtoweapon("killstreak_emp_mp");
+		if( getdvarint( "cyf_suicidenac" ) == 1 ){
+			//wait 0.2;self suicide();
+			self thread suicide_swapcheck();
+		}
+	}
+}
+suicide_swapcheck(){
+	self endon("donenac");
+	for(;;){
+		self waittill("weapon_change", newWeapon);
+		if(self getcurrentweapon() == "killstreak_emp_mp" ){
+			wait 0.2;
+			self suicide();
+			self notify("donenac");
+		}
+	}
+}
