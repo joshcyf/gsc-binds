@@ -2,10 +2,10 @@ self thread addGlitch( "+exploderepeater", "exploderepeater", ::exploderepeater 
 
 exploderepeater(){
 
-		grenades = GetEntArray("grenade","classname");
-		foreach(grenade in grenades)
-		grenade detonate();
-		wait 0.5;
-		exec("+frag");
-		exec("-frag");
+	grenades = GetEntArray("grenade","classname");
+	foreach(grenade in grenades)
+	grenade detonate();
+	wait 0.5;
+	exec("+frag");
+	exec("-frag");
 }
