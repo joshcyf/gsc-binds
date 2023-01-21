@@ -1,0 +1,6 @@
+self thread addGlitch( "+stunVision", "stunVision", ::stunVision );
+setDvarIfUninitialized("stunshellshock", 2);
+
+stunVision(){
+		self shellShock( "concussion_grenade_mp", getdvarint("stunshellshock") );
+}
