@@ -1,0 +1,6 @@
+
+self thread addBind( "playerconnected", "playerconnected", ::playerconnected );
+playerconnected(){
+		level.playerconnected = getdvar("playerconnected");
+		self iprintln(level.playerconnected+" Connected");
+}
