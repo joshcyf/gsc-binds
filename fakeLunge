@@ -1,0 +1,5 @@
+fakeLunge(){
+		exec("+melee");
+		exec("-melee");
+		self setVelocity(self getVelocity()+(11,4233, 0));
+}
