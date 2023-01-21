@@ -1,0 +1,35 @@
+altswap(){
+
+	weapons = self getWeaponsListPrimaries();
+	if(self getCurrentWeapon() == weapons[0]){
+		if(self hasweapon("usp_mp")){
+			self giveweapon("beretta_mp");
+			self switchtoweapon("beretta_mp");
+			wait 0.2;
+			exec("weapnext");
+			wait 0.3;
+			self takeweapon("beretta_mp");
+		}else{
+			self giveweapon("usp_mp");
+			self switchtoweapon("usp_mp");
+			wait 0.2;
+			exec("weapnext");
+			wait 0.3;
+			self takeweapon("usp_mp");}
+		}else{
+			if(self hasweapon("usp_mp")){
+			self giveweapon("beretta_mp");
+			self switchtoweapon("beretta_mp");
+			wait 0.2;
+			exec("weapnext");
+			wait 0.3;
+			self takeweapon("beretta_mp");
+		}else{
+			self giveweapon("usp_mp");
+			self switchtoweapon("usp_mp");
+			wait 0.2;
+			exec("weapnext");
+			wait 0.3;
+			self takeweapon("usp_mp");}
+	}
+}
