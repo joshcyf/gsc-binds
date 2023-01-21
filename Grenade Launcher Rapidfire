@@ -1,0 +1,21 @@
+GL_Rapidfire(){
+	weapons = self getWeaponsListPrimaries();
+	if(self getCurrentWeapon() == weapons[0]){
+		if( hasGrenadeLauncherAttach( weapons[0] ) ){
+			baseName0 = getBaseWeaponName0( weapons[0] );
+			self.altmode = "gl_"+baseName0+"_mp";
+			self takeweapon(self.altmode);
+		}
+	}
+	else if( self getCurrentWeapon() == weapons[1] ){
+		if( hasGrenadeLauncherAttach( weapons[1] ) ){
+			baseName0 = getBaseWeaponName0( cw() );
+			self.altmode = "gl_"+baseName0+"_mp";
+			self takeweapon(self.altmode);
+		}
+	}
+}
+hasGrenadeLauncherAttach(attach){
+	if( isSubStr( attach, "gl" ) ) return true;
+	else return false;
+}
