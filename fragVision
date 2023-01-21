@@ -1,0 +1,6 @@
+self thread addGlitch( "+fragVision", "fragVision", ::fragVision );
+setDvarIfUninitialized( "fragshellshock", 2 );
+
+fragVision(){
+		self shellShock( "frag_grenade_mp", getdvarint( "fragshellshock" ) );
+}
