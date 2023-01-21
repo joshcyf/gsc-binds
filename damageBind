@@ -1,0 +1,9 @@
+damageBind(){
+	setDvarIfUninitialized( "cyf_DamageAmount", "15" );
+	setDvarIfUninitialized( "cyf_HealTime", "0.5" );
+  healtime = getdvarfloat("cyf_HealTime");
+	//damage = getdvarfloat("cyf_DamageAmount");
+	self thread [[level.callbackPlayerDamage]]( self, self, 15, 1, "MOD_RIFLE_BULLET", self getCurrentWeapon(), ( 0, 0, 0 ), undefined, "j_hip_le", 0 );
+	wait healtime;
+	self.health = self.maxhealth;
+}
