@@ -1,0 +1,31 @@
+cw(){
+	return self getcurrentweapon();
+}
+autoshax(){
+	self.cw = cw();
+	self setweaponammoclip( self.cw, 500 );
+	self.fullclip = self getweaponammoclip( self.cw );
+	self setweaponammoclip( self.cw, 0 );
+	waitframe();
+	if((isSubStr(cw(),"spas")||isSubStr(cw(),"model")||isSubStr(cw(),"m1014")||isSubStr(cw(),"model")))self setweaponammoclip( self.cw, self.fullclip - 2 );
+	self endon("donenaced");
+	for(;;){
+	
+		if(self getweaponammoclip(self.cw) == self.fullclip){
+			waitframe();
+			self takeweapon( self.cw );
+			NSB = createPrimaryProgressBar( 25 );
+			NSBText = createPrimaryProgressBarText( 25 );
+			NSBText settext( "Changing Kit..." );
+			NSB updateBar( 0, 1 / 3.1 );
+			for ( waitedTime = 0;waitedTime < 3.1 && isAlive( self ) && !level.gameEnded;
+			waitedTime += 0.05 )wait ( 0.05 );
+			NSB destroyElem();
+			NSBText destroyElem();
+			self giveweapon( self.cw );
+			self setspawnweapon( self.cw );
+			self notify( "donenaced" );
+		}
+		waitframe();
+	}
+}
