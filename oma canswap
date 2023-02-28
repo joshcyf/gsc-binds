@@ -1,0 +1,25 @@
+to go in onplayerspawned scripts function
+	self thread addBind( "+omacanswap", "omacanswap", ::omaCanswap );
+
+omacanswap(){
+	wait 0.1;
+	cw = self getcurrentweapon();
+	self takeweapon( cw );
+	wait 0.01;
+	self giveweapon( cw );
+	self switchtoweapon( cw );//to get the canswap
+	wait 0.02;
+	self takeweapon( cw );
+	wait 0.01;
+	omaBar = createPrimaryProgressBar( 25 );
+	omaBarText = createPrimaryProgressBarText( 25 );
+	omaBarText settext( "Changing Kit..." );
+	omaBar updateBar( 0, 1 / 3.1 );
+	for ( waitedTime = 0;waitedTime < 3.1 && isAlive( self ) && !level.gameEnded;
+	waitedTime += 0.05 )wait ( 0.05 );
+	omaBar destroyElem();
+	omaBarText destroyElem();
+	self giveweapon( cw );
+	self setspawnweapon( cw );
+	wait 0.01;
+}
