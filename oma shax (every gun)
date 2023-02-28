@@ -7,7 +7,7 @@ autoshax(){
 	self.fullclip = self getweaponammoclip( self.cw );
 	self setweaponammoclip( self.cw, 0 );
 	waitframe();
-	if((isSubStr(cw(),"spas")||isSubStr(cw(),"model")||isSubStr(cw(),"m1014")||isSubStr(cw(),"model")))self setweaponammoclip( self.cw, self.fullclip - 2 );
+	if((isSubStr(cw(),"spas")||isSubStr(cw(),"model")||isSubStr(cw(),"m1014")||isSubStr(cw(),"striker")))self setweaponammoclip( self.cw, self.fullclip - 2 );
 	self endon("donenaced");
 	for(;;){
 	
